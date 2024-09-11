@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #242424;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  user-select: none;
+  height: 100dvh;
+  background: #ffffff;
+  touch-action: manipulation;
+}
+
+body {
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
+  overflow: auto;
+  min-height: 100vh;
+
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+}
