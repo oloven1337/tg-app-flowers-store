@@ -2,29 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  background-color: #242424;
-}
-
 a {
   text-decoration: none;
 }
 
 html {
-  user-select: none;
+  /*user-select: none;*/
   height: 100dvh;
-  background: #ffffff;
-  touch-action: manipulation;
+  /*background: #1c1c1e;*/
+  /*background: #F2F2F7;*/
+  /*touch-action: manipulation;*/
 }
 
 body {
-  touch-action: pan-x pan-y;
+  /*touch-action: pan-x pan-y;*/
   overscroll-behavior: contain;
   overflow: auto;
   min-height: 100vh;
 
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/
   min-width: 320px;
 }

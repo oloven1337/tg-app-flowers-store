@@ -1,0 +1,25 @@
+/* Цвет обычных точек */
+.swiper-pagination-bullet {
+    background-color: #FFFFFF;
+    opacity: 0.6;
+}
+
+/* Цвет и размер активной точки */
+.swiper-pagination-bullet-active {
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    width: 24px;
+    height: 8px;
+    border-radius: 10px; /* Овальная форма */
+    /*transition: all 0.3s ease;*/
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    bottom: 30px;
+}

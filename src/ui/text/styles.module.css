@@ -1,0 +1,25 @@
+.text {
+  color: #2F2F2F;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.small {
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.regular {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.medium {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.head {
+  font-weight: 600;
+  font-size: 24px;
+}
