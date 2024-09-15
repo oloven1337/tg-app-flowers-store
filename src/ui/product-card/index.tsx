@@ -15,7 +15,12 @@ export const ProductCard: FC<IProductCardProps> = ({ handleClick, ...bouquet }) 
   return (
       <div className="rounded-2xl bg-white">
         <Link to={`/product/${bouquet.bouquet_id}`}>
-          {!bouquet.main_image_path ? <Skeleton width="100%" height={112} /> : (
+          {!bouquet.main_image_path ? (
+              <Skeleton width="95%" style={{
+                marginLeft: '2%',
+                marginTop: '1%'
+              }} height={112} />
+              ) : (
               <img
                   className="rounded-t-2xl w-full h-[112px] object-contain"
                   src={'https://rfflowers.ru/' + bouquet.main_image_path}

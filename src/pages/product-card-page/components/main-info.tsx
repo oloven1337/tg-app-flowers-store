@@ -18,12 +18,12 @@ export const MainInfo: FC<MainInfoProps> = ({ title, price_build, price_base, is
       <div style={{
         background: tg?.themeParams?.bottom_bar_bg_color || '#F2F2F7'
       }} className="relative bottom-5 z-10 text-start p-4 bg-white rounded-2xl">
-        {isLoading ? <Skeleton width={220} height={40} /> : (
+        {isLoading ? <Skeleton width={210} height={40} /> : (
             <Text style={{
               color: tg.themeParams.text_color
             }} className="text-[28px]" variant={"HEAD"}>{title}</Text>
         )}
-        {isLoading ? <Skeleton width={170} height={40} /> : <Text style={{
+        {isLoading ? <Skeleton width={160} height={40} /> : <Text style={{
           color: tg.themeParams.text_color
         }} variant={"HEAD"}>{price_base + " ₽"}</Text>}
         <div className="border border-t-[#F2F2F7] my-3"></div>

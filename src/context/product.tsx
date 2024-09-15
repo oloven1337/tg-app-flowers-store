@@ -10,14 +10,33 @@ export interface IFilters {
   offset?: number;
 }
 
-interface ProductContextType {
+export interface ProductContextType {
   products: IProduct[];
+  setProducts: Dispatch<SetStateAction<IProduct[]>>;
+
   filters: IFilters;
   setFilters: Dispatch<SetStateAction<IFilters>>;
-  fetchProducts: (newFilters?: IFilters) => Promise<void>;
-  saveScrollPosition: (position: number) => void;
+
+  setScrollPosition: (position: number) => void;
   scrollPosition: number;
 }
+
+export const initialStateProduct: ProductContextType = {
+  products: [],
+  setProducts: () => void 0,
+
+  filters: {
+    min_price_base: 0,
+    max_price_base: 1000,
+    name_filter: '',
+    limit: 10,
+    offset: 0,
+  },
+  setFilters: () => void 0,
+
+  scrollPosition: 0,
+  setScrollPosition: () => void 0,
+};
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
@@ -28,3 +47,5 @@ export const useProductContext = () => {
   }
   return context;
 };
+
+export default ProductContext;

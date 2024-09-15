@@ -11,7 +11,7 @@ html {
   height: 100dvh;
   /*background: #1c1c1e;*/
   /*background: #F2F2F7;*/
-  /*touch-action: manipulation;*/
+  touch-action: manipulation;
 }
 
 body {

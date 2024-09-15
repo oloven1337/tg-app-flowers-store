@@ -1,14 +1,13 @@
 import { FC } from 'react';
 
-export interface IButtonProps {
-  onClick: () => void;
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: string | JSX.Element;
   className?: string;
 }
 
-export const Button: FC<IButtonProps> = ({ onClick, children, className = "" }) => {
+export const Button: FC<IButtonProps> = ({ children, className = "", ...props }) => {
   return (
-      <button className={className} onClick={onClick}>
+      <button {...props} className={className}>
         {children}
       </button>
   );

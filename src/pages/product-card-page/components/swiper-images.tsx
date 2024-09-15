@@ -10,8 +10,6 @@ interface SwiperImagesProps {
   images: string[] | undefined | null;
 }
 
-const PATH = import.meta.env.VITE_URL
-
 export const SwiperImages: FC<SwiperImagesProps> = ({ images }) => {
 
   return (
@@ -25,7 +23,7 @@ export const SwiperImages: FC<SwiperImagesProps> = ({ images }) => {
       >
         {images?.map((imageLink, index) => (
             <SwiperSlide key={index}>
-              <img src={PATH + imageLink} alt="flower" />
+              <img className="w-full" src={imageLink} alt="flower" />
             </SwiperSlide>
         ))}
       </Swiper>
