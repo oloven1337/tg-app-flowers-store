@@ -7,4 +7,5 @@ export interface IProduct {
   price_build: number;
   structure: string;
   main_image_path: string;
+  image_paths?: string[] | null;
 }

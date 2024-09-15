@@ -1,10 +1,14 @@
 import './App.css'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import 'react-loading-skeleton/dist/skeleton.css'
 
+import UserContext, { initialStateUser } from "./context/user.tsx";
 import { routes } from "./router.tsx";
 
 function App() {
+  const [avatar, setAvatar] = useState<string>(initialStateUser.avatar);
+
   const router = createBrowserRouter(routes);
   const tg = window.Telegram.WebApp;
 
@@ -15,9 +19,9 @@ function App() {
     document.documentElement.style.backgroundColor = tg.themeParams.bg_color || "#F2F2F7";
   }, []);
   return (
-      <>
+      <UserContext.Provider value={{ avatar, setAvatar }}>
         <RouterProvider router={router} />
-      </>
+      </UserContext.Provider>
   )
 }
 

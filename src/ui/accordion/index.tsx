@@ -1,6 +1,6 @@
 import { FC, useRef } from 'react';
 
-import arrow from '../../assets/icons/arrow.svg';
+import { Arrow } from "../../assets/icons/arrow.tsx";
 
 interface AccordionProps {
   children: JSX.Element | JSX.Element[];
@@ -27,9 +27,15 @@ export const Accordion: FC<AccordionProps> = ({ children, setIsOpen, isOpen, acc
         >
           <span style={{ color: tg.themeParams.text_color }}>{accordionName}</span>
           <span>{isOpen ? (
-              <img className="rotate-[-90deg] h-4 w-4" src={arrow} alt=""/>
+              // <img className="rotate-[-90deg] h-4 w-4" src={arrow} alt=""/>
+              <div className="rotate-[-90deg] h-4 w-4">
+                <Arrow color={tg.themeParams.text_color}/>
+              </div>
           ) : (
-              <img className="rotate-90 h-4 w-4" src={arrow} alt=""/>
+              // <img className="rotate-90 h-4 w-4" src={arrow} alt=""/>
+              <div className="rotate-90 h-4 w-4">
+                <Arrow color={tg.themeParams.text_color}/>
+              </div>
           )}</span>
         </button>
         <div

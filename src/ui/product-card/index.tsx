@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import Skeleton from "react-loading-skeleton";
 import { Link } from 'react-router-dom';
 
-import flower from '../../assets/images/flower.jpg';
 import { IProduct } from "../../models/IProduct.ts";
 import { Button } from "../button";
 import { Text } from "../text";
@@ -15,7 +15,13 @@ export const ProductCard: FC<IProductCardProps> = ({ handleClick, ...bouquet }) 
   return (
       <div className="rounded-2xl bg-white">
         <Link to={`/product/${bouquet.bouquet_id}`}>
-          <img className="rounded-t-2xl" src={flower} alt=""/>
+          {!bouquet.main_image_path ? <Skeleton width="100%" height={112} /> : (
+              <img
+                  className="rounded-t-2xl w-full h-[112px] object-contain"
+                  src={'https://rfflowers.ru/' + bouquet.main_image_path}
+                  alt=""
+              />
+          )}
           <div className="p-2">
             <Text className="text-start" variant="MEDIUM">{`${price_base} ₽`}</Text>
             <Text className="text-start mb-2" variant="REGULAR">{bouquet_name}</Text>
@@ -25,5 +31,5 @@ export const ProductCard: FC<IProductCardProps> = ({ handleClick, ...bouquet }) 
           </div>
         </Link>
       </div>
-);
+  );
 };
