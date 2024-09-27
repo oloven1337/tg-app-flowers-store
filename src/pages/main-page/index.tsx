@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 
 import { MainHeader } from "./components/main-header.tsx";
 import { fetchProducts } from "../../api/products";
+import { Carousel } from "../../components/carousel/carousel.tsx";
 import { ProductList } from "../../components/product-list";
 import { RedirectCardList } from "../../components/redirect-card-list";
 import { Search } from "../../components/search";
@@ -31,6 +32,7 @@ export const MainPage = () => {
       <div className="p-4">
         <MainHeader />
         <Search search={search} setSearch={setSearch} />
+        <Carousel />
         <RedirectCardList />
         <Text style={{
           color: tg.themeParams.text_color

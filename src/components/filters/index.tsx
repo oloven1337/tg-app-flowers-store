@@ -34,7 +34,7 @@ export const Filters = () => {
   return (
       <div className="pt-7 pb-4">
         <Text className="mb-4" variant="HEAD">Фильтры</Text>
-        <div className="ounded-lg">
+        <div className="rounded-lg">
           <div className="rounded-2xl bg-white p-3 mb-2">
             <PriceRange
                 minPrice={minPrice}

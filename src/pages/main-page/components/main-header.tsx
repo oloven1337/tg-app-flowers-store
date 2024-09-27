@@ -39,7 +39,7 @@ export const MainHeader = () => {
         <div className="flex items-center gap-2">
           <img className="rounded-[50%] w-9 h-9" src={avatar || defaultAvatar} alt="User Avatar" />
           <Text
-              variant="REGULAR"
+              variant="MEDIUM"
               style={{
                 color: tg.themeParams.text_color,
               }}

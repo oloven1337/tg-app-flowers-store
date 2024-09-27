@@ -3,7 +3,7 @@ import React from 'react';
 import { Accordion } from "../../../ui/accordion";
 import { Text } from "../../../ui/text";
 
-export const Description = () => {
+export const Description = ({ description = '' }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const tg = window.Telegram.WebApp;
 
@@ -15,8 +15,7 @@ export const Description = () => {
           <Text style={{
             color: tg.themeParams.hint_color
           }} className="text-start" variant="REGULAR">
-            Милый и нежный букет из розовых роз сорта Аква упакованный в дизайнерскую бумагу. Чудесный букет обязательно
-            понравится вашему получателю.
+            {description}
           </Text>
         </Accordion>
       </div>

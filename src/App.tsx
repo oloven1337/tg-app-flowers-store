@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect, useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -7,7 +8,6 @@ import ProductContext, { initialStateProduct, ProductContextType } from "./conte
 import UserContext, { initialStateUser } from "./context/user.tsx";
 import { routes } from "./router.tsx";
 
-import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
   const queryClient = new QueryClient()
@@ -23,7 +23,7 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     window.Telegram?.WebApp?.expand();
-    document.documentElement.style.backgroundColor = tg.themeParams.bg_color || "#F2F2F7";
+    document.documentElement.style.backgroundColor = tg.themeParams.bottom_bar_bg_color || "#F2F2F7";
   }, []);
   return (
       <QueryClientProvider client={queryClient}>

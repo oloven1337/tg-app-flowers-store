@@ -44,7 +44,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
         )}
 
         <motion.div
-            className={`fixed bottom-0 left-0 right-0 bg-[#F2F2F7] shadow-lg rounded-t-3xl z-50 max-h-[80vh] w-full overflow-hidden`}
+            className={`fixed bottom-0 left-0 right-0 bg-[#F2F2F7] shadow-lg rounded-t-3xl z-50 max-h-[80vh] w-full overflow-scroll`}
             initial={{ y: '100%', opacity: 0 }}
             animate={controls}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}

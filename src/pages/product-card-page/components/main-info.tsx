@@ -1,8 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Skeleton from 'react-loading-skeleton'
 
 import { Button } from "../../../ui/button";
 import { Text } from "../../../ui/text";
+
+type ProductType = 'Без сборки' | 'Со сборкой';
 
 interface MainInfoProps {
   title: string;
@@ -12,7 +14,16 @@ interface MainInfoProps {
 }
 
 export const MainInfo: FC<MainInfoProps> = ({ title, price_build, price_base, isLoading }) => {
+  const [typeProduct, setTypeProduct] = useState<ProductType>('Без сборки');
   const tg = window.Telegram.WebApp;
+
+  const changeTypeProduct = (type: ProductType) => {
+    if (type === 'Без сборки') {
+      setTypeProduct('Без сборки');
+    } else {
+      setTypeProduct('Со сборкой');
+    }
+  }
 
   return (
       <div style={{
@@ -31,26 +42,34 @@ export const MainInfo: FC<MainInfoProps> = ({ title, price_build, price_base, is
           color: tg.themeParams.text_color
         }} className="font-semibold mb-3" variant={"MEDIUM"}>Цена</Text>
         <div className="text-center">
-          <Button className="mx-1 min-w-[172px] p-2 text-center border-2 border-primary rounded-lg"
-                  onClick={() => console.log('click')}>
+          <Button className={`mx-1 w-[172px] p-2 text-center border-2 ${typeProduct === 'Без сборки' ? 'border-primary' : 'border-[#F2F2F7]'} rounded-lg`}
+                  onClick={() => changeTypeProduct('Без сборки')}>
             <>
               <Text style={{
                 color: tg.themeParams.text_color
               }} variant="REGULAR" className="font-medium">Без сборки</Text>
               <Text style={{
                 color: tg.themeParams.text_color
-              }} variant="SMALL" className="text-[#A3A3A3]">{price_base + " ₽"}</Text>
+              }} variant="SMALL" className="text-[#A3A3A3]">{
+                !price_base
+                    ? (<Skeleton width={60} height={20}/>)
+                    : price_base + " ₽"
+              }</Text>
             </>
           </Button>
-          <Button className="mx-1 min-w-[172px] p-2 text-center border-2 border-[#F2F2F7] rounded-lg"
-                  onClick={() => console.log('click')}>
+          <Button className={`mx-1 w-[172px] p-2 text-center border-2 ${typeProduct === 'Со сборкой' ? 'border-primary' : 'border-[#F2F2F7]'} rounded-lg`}
+                  onClick={() => changeTypeProduct('Со сборкой')}>
             <>
               <Text style={{
                 color: tg.themeParams.text_color
               }} variant="REGULAR" className="font-medium">Со сборкой</Text>
               <Text style={{
                 color: tg.themeParams.text_color
-              }} variant="SMALL" className="text-[#A3A3A3]">{price_build + " ₽"}</Text>
+              }} variant="SMALL" className="text-[#A3A3A3]">{
+                !price_build
+                    ? (<Skeleton width={60} height={20}/>)
+                    : price_build + " ₽"}
+              </Text>
             </>
           </Button>
         </div>

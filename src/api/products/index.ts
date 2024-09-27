@@ -20,3 +20,13 @@ export const fetchProduct = async (id: string) => {
     console.error('Error fetching product', error);
   }
 };
+
+export const fetchReviews = async (id: string) => {
+  try {
+    const response = await axios.get(`/reviews/${id}`);
+
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching reviews', error);
+  }
+};

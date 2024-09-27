@@ -13,7 +13,7 @@ export const RedirectCard: FC<IRedirectCardProps> = ({ title, link }) => {
 
   return (
       <Link to={link || "/"} style={{
-        background: tg?.themeParams?.bottom_bar_bg_color || '#F2F2F7'
+        background: tg?.themeParams?.bg_color || '#F2F2F7'
       }} className="w-[168px] h-[90px] bg-white rounded-2xl p-4">
         <div>
           <Text style={{
