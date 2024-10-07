@@ -8,6 +8,7 @@ import { ProductList } from "../../components/product-list";
 import { RedirectCardList } from "../../components/redirect-card-list";
 import { Search } from "../../components/search";
 import { useDebounce } from "../../hooks/useDebounce.tsx";
+import { carouselData } from "../../mocks/carousel-data.ts";
 import { Text } from "../../ui/text";
 
 export const MainPage = () => {
@@ -32,7 +33,7 @@ export const MainPage = () => {
       <div className="p-4">
         <MainHeader />
         <Search search={search} setSearch={setSearch} />
-        <Carousel />
+        <Carousel carouselData={carouselData} />
         <RedirectCardList />
         <Text style={{
           color: tg.themeParams.text_color

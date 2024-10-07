@@ -1,6 +1,7 @@
-import { FC, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
 import { Arrow } from "../../assets/icons/arrow.tsx";
+import { useForceUpdate } from "../../hooks/useForceUpdate.tsx";
 
 interface AccordionProps {
   children: JSX.Element | JSX.Element[];
@@ -11,15 +12,30 @@ interface AccordionProps {
 
 export const Accordion: FC<AccordionProps> = ({ children, setIsOpen, isOpen, accordionName }) => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const forceUpdate = useForceUpdate();
   const tg = window.Telegram.WebApp;
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const update = async () => {
+      setTimeout(() => {
+        forceUpdate()
+      }, 500)
+    }
+
+    (async () => {
+      await update();
+      forceUpdate()
+    })()
+
+  }, [forceUpdate]);
+
   return (
       <div style={{
-        background: tg?.themeParams?.bottom_bar_bg_color || '#F2F2F7'
+        background: tg?.themeParams?.bg_color || '#FFFFFF'
       }} className="w-full max-w-md p-4 bg-white rounded-lg shadow-md">
         <button
             className="flex justify-between items-center w-full font-semibold text-lg text-left"

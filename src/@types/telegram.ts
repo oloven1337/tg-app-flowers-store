@@ -15,6 +15,7 @@ interface TelegramWebAppInitDataUnsafe {
 interface Telegram {
   WebApp: {
     initData: string;
+    openLink: (link: string) => void;
     initDataUnsafe: TelegramWebAppInitDataUnsafe;
     themeParams: {
       section_bg_color: string;

@@ -27,15 +27,15 @@ export const Reviews: FC<ReviewsProps> = ({ id }) => {
 
   return (
       <div style={{
-        background: tg?.themeParams?.bottom_bar_bg_color || '#F2F2F7'
-      }} className="mt-3 pb-4 bg-white rounded-lg shadow-md p-4 overflow-x-scroll">
+        background: tg?.themeParams?.bg_color || '#FFFFFF'
+      }} className="pb-4 bg-white rounded-lg shadow-md p-4 overflow-x-scroll">
         <div className="w-max">
           <Text className="mb-[18px]" variant="MEDIUM" style={{color: tg.themeParams.text_color, fontWeight: 600}}>Отзывы</Text>
           <div className="flex align-center gap-2">
             {!!reviewData && reviewData?.length > 0 && reviewData?.map(review => (
                 <ReviewCard
                     key={review.review_id}
-                    imageSrc={review.image_path ? PATH + '/static/' + review.image_path : undefined}
+                    imageSrc={review.image_path ? PATH + 'static/' + review.image_path : undefined}
                     reviewText={review.review_description}
                     views={528}
                     time="10:27"

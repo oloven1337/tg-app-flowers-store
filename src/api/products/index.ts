@@ -30,3 +30,23 @@ export const fetchReviews = async (id: string) => {
     console.error('Error fetching reviews', error);
   }
 };
+
+interface SendProductData {
+  chat_id?: number | null;
+  user_id?: number | null;
+  bouquet_name?: string | null;
+  price?: number | null;
+  bouquet_link?: string | null;
+  image_url?: string | null;
+  needs_assembly?: boolean | null;
+}
+
+export const sendProduct = async (data: SendProductData) => {
+  try {
+    const response = await axios.post('/send_bouquet', data);
+
+    return response.data;
+  } catch (error) {
+    console.error('Error sending product', error);
+  }
+}
