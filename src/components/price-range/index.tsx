@@ -13,7 +13,7 @@ export const PriceRange: React.FC<PriceRangeProps> = ({ minPrice, maxPrice, onMi
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const invalidChars = ['-', '+', 'e', 'E', '.'];
     if (invalidChars.includes(e.key)) {
-      e.preventDefault(); // Отклонить ввод недопустимых символов
+      e.preventDefault();
     }
   };
 

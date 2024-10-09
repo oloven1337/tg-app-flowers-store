@@ -117,7 +117,6 @@ export const ProductCardPage = () => {
               // background: '#927BD5'
             }} className="w-full py-2.5 rounded-lg">
               <Text variant="MEDIUM" style={{
-                // color: tg.themeParams.text_color || 'white'
                 color: 'white'
               }}>
                 Купить за {typeProduct === 'Без сборки' ? price_base : price_build} ₽

@@ -17,7 +17,6 @@ export const RedirectCard: FC<IRedirectCardProps> = ({ title, link }) => {
       }} className="w-[168px] h-[90px] bg-white rounded-2xl p-4">
         <div>
           <Text style={{
-            // color: tg.themeParams.accent_text_color
             background: `linear-gradient(90deg, ${tg?.themeParams?.destructive_text_color || '#ef5b5b'} -19%, ${tg?.themeParams?.accent_text_color || '#626aee'}) 72%`,
             WebkitBackgroundClip: 'text',
             color: 'transparent'

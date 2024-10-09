@@ -13,14 +13,13 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
   useEffect(() => {
     if (isOpen) {
       controls.start({ y: 0, opacity: 1 });
-      document.body.style.overflow = 'hidden'; // Отключение скролла
+      document.body.style.overflow = 'hidden';
     } else {
-      // Закрытие компоненты
       controls.start({ y: '100%', opacity: 0 });
-      document.body.style.overflow = ''; // Включение скролла
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = ''; // Сброс стиля при размонтировании
+      document.body.style.overflow = '';
     };
   }, [isOpen, controls]);
 
@@ -33,10 +32,9 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, child
   return (
       <>
         {isOpen && (
-            // Полупрозрачный оверлей
             <motion.div
                 className="fixed inset-0 bg-black bg-opacity-50 z-40"
-                onClick={onClose} // Закрытие при клике на фон
+                onClick={onClose}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

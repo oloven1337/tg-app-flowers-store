@@ -7,14 +7,12 @@ import { Filters } from "../../components/filters";
 import { ProductList } from "../../components/product-list";
 import { Search } from "../../components/search";
 import { useDebounce } from "../../hooks/useDebounce";
-// import { IProduct } from "../../models/IProduct.ts";
 import { BottomSheet } from "../../ui/bottom-sheet";
 import { Button } from "../../ui/button";
 import { Text } from "../../ui/text";
 
 export const CatalogPage = () => {
   const [search, setSearch] = useState("");
-  // const [products, setProducts] = useState<IProduct[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
   const debouncedSearch = useDebounce(search, 500);
@@ -28,18 +26,6 @@ export const CatalogPage = () => {
         cacheTime: 10 * 60 * 1000,
       }
   );
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const data = await fetchProducts({
-  //       name_filter: debouncedSearch.length > 0 ? debouncedSearch : undefined,
-  //     });
-  //
-  //     setProducts(data);
-  //   };
-  //
-  //   getProducts();
-  //
-  // }, [debouncedSearch]);
 
   return (
       <div className="p-4">
