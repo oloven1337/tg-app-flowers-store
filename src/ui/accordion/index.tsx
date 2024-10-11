@@ -31,7 +31,7 @@ export const Accordion: FC<AccordionProps> = ({ children, setIsOpen, isOpen, acc
       forceUpdate()
     })()
 
-  }, [forceUpdate]);
+  }, [children, forceUpdate]);
 
   return (
       <div style={{

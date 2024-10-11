@@ -20,7 +20,7 @@ export type ProductType = 'Без сборки' | 'Со сборкой';
 const PATH = import.meta.env.VITE_URL
 
 export const ProductCardPage = () => {
-  // const url = window.location.href;
+  const url = window.location.href;
   const { mutate } = useMutation(sendProduct);
   const [typeProduct, setTypeProduct] = useState<ProductType>('Без сборки');
   const tg = window.Telegram.WebApp;
@@ -55,7 +55,7 @@ export const ProductCardPage = () => {
       user_id: tg.initDataUnsafe.user?.id,
       bouquet_name: bouquet_name,
       price: typeProduct === 'Без сборки' ? price_base : price_build,
-      bouquet_link: "https://rfflsowers.ru/product/10",
+      bouquet_link: url,
       image_url: 'https://rfflowers.ru/' + 'static/' + image_paths?.[0],
       needs_assembly: typeProduct === 'Со сборкой'
     };
